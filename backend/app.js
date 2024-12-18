@@ -8,13 +8,14 @@ const problemRoutes = require('./routes/problem');
 const topicRoutes = require('./routes/topic');
 const subtopicRoutes = require('./routes/subTopic');
 const userRoutes = require('./routes/user');
+const cors = require('cors')
 
 const errorHandler = require('./middlewares/errorHandler');
 
 const app = express();
 
 dotenv.config();
-
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
